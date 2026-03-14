@@ -1,5 +1,6 @@
 package com.fake.review.purchase.model;
 
+import com.fake.review.purchase.Enum.PurchaseStatus;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -25,7 +26,7 @@ public class Purchase {
 
     private String itemType;
 
-    private String status; // PENDING, COMPLETED, CANCELLED
+    private PurchaseStatus status; // PENDING, COMPLETED, CANCELLED
 
     private LocalDateTime purchaseDate;
 

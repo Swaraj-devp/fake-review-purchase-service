@@ -1,5 +1,6 @@
 package com.fake.review.purchase.service;
 
+import com.fake.review.purchase.Enum.PurchaseStatus;
 import com.fake.review.purchase.dto.PurchaseRequest;
 import com.fake.review.purchase.dto.PurchaseResponse;
 import com.fake.review.purchase.mapper.PurchaseMapper;
@@ -31,7 +32,7 @@ public class PurchaseServiceImpl implements PurchaseService{
     }
 
     @Override
-    public PurchaseResponse updatePurchase(String id, PurchaseRequest request) {
+    public PurchaseResponse updatePurchase(String id, PurchaseRequest request, PurchaseStatus PurchaseStatus) {
         Optional<Purchase> optionalPurchase = purchaseRepository.findById(id);
 
         if (!optionalPurchase.isPresent()) {
@@ -41,7 +42,7 @@ public class PurchaseServiceImpl implements PurchaseService{
             purchase.setUserName(request.getUsername());
             purchase.setItemId(request.getItemId());
             purchase.setItemType(request.getItemType());
-            purchase.setStatus(request.getStatus());
+            purchase.setStatus(PurchaseStatus);
 
             Purchase updated = purchaseRepository.save(purchase);
 
@@ -80,7 +81,8 @@ public class PurchaseServiceImpl implements PurchaseService{
                         username,
                         itemId,
                         itemType,
-                        "COMPLETED"
+                        PurchaseStatus.COMPLETED
+
                 );
     }
 }

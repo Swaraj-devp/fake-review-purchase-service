@@ -1,5 +1,6 @@
 package com.fake.review.purchase.controller;
 
+import com.fake.review.purchase.Enum.PurchaseStatus;
 import com.fake.review.purchase.dto.PurchaseRequest;
 import com.fake.review.purchase.dto.PurchaseResponse;
 import com.fake.review.purchase.service.PurchaseService;
@@ -8,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/api/purchases")
 public class PurchaseController {
@@ -22,8 +24,9 @@ public class PurchaseController {
 
     @PutMapping("/{id}")
     public PurchaseResponse updatePurchase(@PathVariable String id,
-                                           @RequestBody PurchaseRequest request) {
-        return purchaseService.updatePurchase(id, request);
+                                           @RequestBody PurchaseRequest request,
+                                           @RequestParam PurchaseStatus PurchaseStatus) {
+        return purchaseService.updatePurchase(id, request, PurchaseStatus);
     }
 
     @DeleteMapping("/{id}")
