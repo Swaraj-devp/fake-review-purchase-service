@@ -1,5 +1,6 @@
 package com.fake.review.purchase.dto;
 
+import com.fake.review.purchase.Enum.PurchaseStatus;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -17,7 +18,7 @@ public class PurchaseResponse {
     private String username;
     private Long itemId;
     private String itemType;
-    private String status;
+    private PurchaseStatus status;
     private LocalDateTime purchaseDate;
 
 }

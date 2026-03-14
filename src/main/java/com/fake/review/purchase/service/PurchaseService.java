@@ -1,5 +1,6 @@
 package com.fake.review.purchase.service;
 
+import com.fake.review.purchase.Enum.PurchaseStatus;
 import com.fake.review.purchase.dto.PurchaseRequest;
 import com.fake.review.purchase.dto.PurchaseResponse;
 
@@ -9,7 +10,7 @@ public interface PurchaseService {
 
     PurchaseResponse createPurchase(PurchaseRequest request);
 
-    PurchaseResponse updatePurchase(String id, PurchaseRequest request);
+    PurchaseResponse updatePurchase(String id, PurchaseRequest request,PurchaseStatus purchaseStatus);
 
     void deletePurchase(String id);
 
