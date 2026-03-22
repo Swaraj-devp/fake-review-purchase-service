@@ -23,13 +23,15 @@ public class PurchaseMapper {
 
     public static PurchaseResponse toResponse(Purchase purchase) {
 
-        return new PurchaseResponse(
-                purchase.getId(),
-                purchase.getUserName(),
-                purchase.getItemId(),
-                purchase.getItemType(),
-                purchase.getStatus(),
-                purchase.getPurchaseDate()
-        );
+        PurchaseResponse response = new PurchaseResponse();
+
+        response.setUsername(purchase.getUserName());
+        response.setItemId(purchase.getItemId());
+        response.setItemType(purchase.getItemType());
+        response.setItemName(purchase.getItemName());
+        response.setStatus(purchase.getStatus());
+        response.setPurchaseDate(purchase.getPurchaseDate());
+
+        return response;
     }
 }
