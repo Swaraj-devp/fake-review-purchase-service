@@ -85,4 +85,11 @@ public class PurchaseServiceImpl implements PurchaseService{
 
                 );
     }
+
+    public List<PurchaseResponse> getPurchasesByUser(String username){
+        return purchaseRepository.findByUserName(username)
+                .stream()
+                .map(PurchaseMapper::toResponse)
+                .collect(Collectors.toList());
+    }
 }

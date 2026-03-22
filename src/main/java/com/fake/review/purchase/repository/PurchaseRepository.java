@@ -5,6 +5,8 @@ import com.fake.review.purchase.model.Purchase;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 @Repository
 public interface PurchaseRepository extends MongoRepository<Purchase, String> {
 
@@ -14,4 +16,6 @@ public interface PurchaseRepository extends MongoRepository<Purchase, String> {
             String itemType,
             PurchaseStatus status
     );
+
+    List<Purchase> findByUserName(String userName);
 }
