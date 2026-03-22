@@ -52,4 +52,9 @@ public class PurchaseController {
 
         return purchaseService.verifyPurchase(username, itemId, itemType);
     }
+
+    @GetMapping("/user/{username}")
+    public List<PurchaseResponse> getPurchasesByUser(@PathVariable String username){
+        return purchaseService.getPurchasesByUser(username);
+    }
 }

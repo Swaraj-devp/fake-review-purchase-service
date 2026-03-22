@@ -25,6 +25,7 @@ public class Purchase {
     private Long itemId;
 
     private String itemType;
+    private String itemName;
 
     private PurchaseStatus status; // PENDING, COMPLETED, CANCELLED
 

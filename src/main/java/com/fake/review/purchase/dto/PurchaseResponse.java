@@ -14,10 +14,10 @@ import java.time.LocalDateTime;
 @Getter
 public class PurchaseResponse {
 
-    private String id;
     private String username;
     private Long itemId;
     private String itemType;
+    private String itemName;
     private PurchaseStatus status;
     private LocalDateTime purchaseDate;
 

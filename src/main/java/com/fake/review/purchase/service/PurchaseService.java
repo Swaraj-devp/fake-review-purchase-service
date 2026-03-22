@@ -20,4 +20,5 @@ public interface PurchaseService {
 
     boolean verifyPurchase(String username, Long itemId, String itemType);
 
+    List<PurchaseResponse> getPurchasesByUser(String username);
 }

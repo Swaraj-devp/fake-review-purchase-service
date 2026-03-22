@@ -15,5 +15,6 @@ public class PurchaseRequest {
     private String username;
     private Long itemId;
     private String itemType;
+    private String itemName;
     private PurchaseStatus status;
 }
