@@ -12,6 +12,7 @@ import lombok.Setter;
 @Setter
 public class PurchaseRequest {
 
+    private String id;
     private String username;
     private Long itemId;
     private String itemType;

@@ -14,6 +14,7 @@ import java.time.LocalDateTime;
 @Getter
 public class PurchaseResponse {
 
+    private String id;
     private String username;
     private Long itemId;
     private String itemType;
