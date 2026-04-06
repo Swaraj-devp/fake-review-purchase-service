@@ -57,4 +57,18 @@ public class PurchaseController {
     public List<PurchaseResponse> getPurchasesByUser(@PathVariable String username){
         return purchaseService.getPurchasesByUser(username);
     }
+
+    @GetMapping("/item")
+    public String getItemName(
+            @RequestParam Long itemId,
+            @RequestParam String username) {
+
+        List<PurchaseResponse> purchases = purchaseService.getPurchasesByUser(username);
+
+        return purchases.stream()
+                .filter(p -> p.getItemId().equals(itemId))
+                .map(PurchaseResponse::getItemName)
+                .findFirst()
+                .orElse("Unknown Item");
+    }
 }

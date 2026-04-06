@@ -12,9 +12,11 @@ public class PurchaseMapper {
     public static Purchase toEntity(PurchaseRequest request) {
 
         Purchase purchase = new Purchase();
+        purchase.setId(request.getId());
         purchase.setUserName(request.getUsername());
         purchase.setItemId(request.getItemId());
         purchase.setItemType(request.getItemType());
+        purchase.setItemName(request.getItemName());
         purchase.setStatus(request.getStatus());
         purchase.setPurchaseDate(LocalDateTime.now());
 
@@ -25,6 +27,7 @@ public class PurchaseMapper {
 
         PurchaseResponse response = new PurchaseResponse();
 
+        response.setId(purchase.getId());
         response.setUsername(purchase.getUserName());
         response.setItemId(purchase.getItemId());
         response.setItemType(purchase.getItemType());
